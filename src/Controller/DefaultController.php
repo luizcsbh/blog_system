@@ -1,33 +1,23 @@
-<?php 
+<?php
 namespace App\Controller;
-
-use App\Mailer\SimpleMailer;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Mailer\SimpleMailer;
 
-class DefaultController extends AbstractController
-{
-    /**
-     * @var SimpleMailer
-     */
+class DefaultController extends AbstractController {
     private $mailer;
 
-    /**
-     * DefaultController Constructor
-     * @param SimpleMailer $mailer
-     */
-
-    public function __construct(SimpleMailer $mailer)
-    {
-        $this->mailer = $mailer;
-    }
-    
     public function index(string $name): Response
     {
-        
-        $this->mailer->send('john@doe.com', 'hello John');
-
-        return $this->render('hello.html.twig',['name' => $name]);
+        return $this->render('index.html.twig', ['name' => $name, ]);
     }
+    public function __construct(SimpleMailer $mailer){
+        $this->mailer = $mailer;
+    }
+
+    public function mail(): Response {
+        $this->mailer->send('emerson@email.com', 'Enviando mensagem');
+        return new Response('<body>ok</body>');
+    }
+
 }
-?>

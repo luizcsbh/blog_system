@@ -2,50 +2,45 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
 /**
- * @ORM\ENtity()
+ * @ORM\Entity()
  */
-final class Post
-{
+
+final class Post {
+     
     /**
      * @ORM\Id()
      * @ORM\Column(type="integer")
-     * @ORM\GenerateValue()
+     * @ORM\GeneratedValue()
      */
-    private ?int $int = null;
+    private ?int $id = null;
 
     /**
      * @ORM\Column()
      */
     public string $title;
-
+    
     /**
-     * @ORM\Column
-     */
+     * @ORM\Column()
+     */    
     public string $description;
 
     /**
      * @ORM\Column(type="datetime")
-     */
-    private \Datetime $createAt;
+     */      
+    private \DateTime $createdAt;
 
-    public function __construct(string $title, string $description)
-    {
+    public function __construct(string $title, string $description) {
         $this->title = $title;
         $this->description = $description;
-        $this->createAt = new \Datetime();
+        $this->createdAt = new \DateTime();
     }
-
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
-    public function getCreatedAt(): \Datetime
-    {
-        return $this->createAt;
+    public function getCreatedAt(): \Datetime {
+        return $this->createdAt;
     }
-}
 
-?>
+}
