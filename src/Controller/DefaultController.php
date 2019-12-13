@@ -16,7 +16,7 @@ class DefaultController extends AbstractController {
     }
 
     public function mail(): Response {
-        $this->mailer->send('emerson@email.com', 'Enviando mensagem');
+        $this->mailer->send('luizcsbh@gmail.com', 'Enviando mensagem');
         return new Response('<body>ok</body>');
     }
 
