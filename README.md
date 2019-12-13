@@ -9,6 +9,17 @@ Projeto PHP onde criada uma aplicação RESTful completa.
 
 Exercicio 2: Disciplina de Framework Back-End PHP
 
+## Pré-requisitos para o projeto
+
+- PHP version 7.4.0
+- Composer version 1.9.1
+
+## Projeto
+
+ Inicializando servidor web para a aplicação digite o comando na raiz do projeto:
+```php
+$php -S localhost:80 -t public
+```
 
 ## Motivação
 
